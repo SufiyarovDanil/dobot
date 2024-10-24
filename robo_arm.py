@@ -7,12 +7,6 @@ cube_counter: int = 1
 z_cube: int = 24
 zcube_count: int = 1
 
-api = None # remove
-dType = None # remove
-
-STEP_PER_CRICLE = 360.0 / 1.8 * 10.0 * 16.0
-MM_PER_CRICLE = 3.1415926535898 * 36.0
-
 
 def init_components() -> None:
     dType.SetInfraredSensor(api, 1, 2, 1)
@@ -80,7 +74,8 @@ def place_cube():
 
 def main() -> None:
     init_components()
-    conv_vel: int = int(10.0 * STEP_PER_CRICLE / MM_PER_CRICLE)
+    conv_vel: int = 2500
+    print(conv_vel)
     start_conv(conv_vel)
 
     while True:
